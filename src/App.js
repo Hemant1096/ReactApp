@@ -1,27 +1,7 @@
-  // import Login from "./Login";
-
-  // function App() {
-  //   return (
-  //    <div>
-  //       <Login />
-  //    </div>
-  //  );
-  // }
-
-  // export default App;
-
-//  import Ludo from "./Ludo";
-
-//  function App() {
-//    return <Ludo />;
-// }
-
-//  export default App;
-
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import Ludo from "./Ludo";
+import StudentForm from "./StudentForm";
 
 function App() {
   return (
@@ -29,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/ludo" element={<Ludo />} />
+        <Route path="/StudentForm" element={<StudentForm />} />
       </Routes>
     </BrowserRouter>
   );

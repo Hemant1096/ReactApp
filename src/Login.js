@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault(); // 🔴 IMPORTANT
 
@@ -23,7 +24,8 @@ function Login() {
 
       if (data.token) {
         localStorage.setItem("jwtToken", data.token);
-        alert("Login successful");
+        navigate("/StudentForm");
+        //alert("Login successful");
       } else {
         alert(data.message || "Invalid login");
       }
@@ -59,6 +61,9 @@ function Login() {
 
           <Link to="/ludo">
             <button type="button">Go to Ludo Game</button>
+          </Link>
+           <Link to="/StudentForm">
+            <button type="button">Go to Add Student</button>
           </Link>
         </form>
       </div>
